@@ -1,6 +1,8 @@
 import { NextComponentType, NextPage } from "next";
 import { Recipe } from "../types/recipes";
 import RecipesComponent from "../components/recipes";
+import Head from "next/head";
+import Link from "next/link";
 
 const RecipesPage: NextPage<NextComponentType> = () => {
   const recipes: Recipe[] = [
@@ -26,6 +28,12 @@ const RecipesPage: NextPage<NextComponentType> = () => {
 
   return (
     <div>
+      <Head>
+        <title>Recipies | My Cooklist</title>
+        <meta name="description" content="A list of custom recipies." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <h1>Recipes</h1>
 
       <h2>Popular recipes</h2>
