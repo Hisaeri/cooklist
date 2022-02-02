@@ -13,6 +13,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  @apply text-blue-400;
+  transition: ease color 0.2s;
+}
+
+a:hover {
+  @apply text-blue-300;
 }
 
 * {

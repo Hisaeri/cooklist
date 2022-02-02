@@ -7,13 +7,14 @@ type RecipeComponentProps = {
 
 const RecipeComponent = ({ recipe }: RecipeComponentProps) => {
   return (
-    <div>
-      <p>{recipe.name}</p>
+    <div className="my-5">
+      <p className="text-2xl">{recipe.name}</p>
       <p>{recipe.desc}</p>
 
       <ul>
         {recipe.ingredients.map((ingredient, i) => (
-          <li key={i}>
+          <li className="pl-6" key={i}>
+            {"- "}
             <RecipeIngredientComponent ingredient={ingredient} />
           </li>
         ))}

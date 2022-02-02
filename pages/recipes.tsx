@@ -2,7 +2,6 @@ import { NextComponentType, NextPage } from "next";
 import { Recipe } from "../types/recipes";
 import RecipesComponent from "../components/recipes";
 import Head from "next/head";
-import Link from "next/link";
 
 const RecipesPage: NextPage<NextComponentType> = () => {
   const recipes: Recipe[] = [
@@ -34,9 +33,7 @@ const RecipesPage: NextPage<NextComponentType> = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Recipes</h1>
-
-      <h2>Popular recipes</h2>
+      <h1 className="text-5xl">Recipes</h1>
       <RecipesComponent recipes={recipes} />
     </div>
   );

@@ -4,10 +4,10 @@ const HeaderComponent = ({}) => {
   return (
     <div>
       <Link href="/">
-        <a>Home</a>
+        <a className="pr-5">Home</a>
       </Link>
       <Link href="/recipes">
-        <a>Recipes</a>
+        <a className="pr-5">Recipes</a>
       </Link>
     </div>
   );
