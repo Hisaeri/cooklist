@@ -32,7 +32,7 @@ const RecipesPage: NextPage<NextComponentType> = ({
       </Head>
 
       <div className="container mx-auto">
-        <h1 className="text-5xl">Recipes</h1>
+        <h1 className="text-5xl">Recipes (for one)</h1>
         <RecipesComponent recipes={recipes} />
       </div>
     </>
