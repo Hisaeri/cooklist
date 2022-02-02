@@ -3,5 +3,6 @@ export type Ingredient = {
     name: string;
     unitQuantity: number;
     unitName?: string;
+    pluralUnitName?: string;
     desc?: string;
 }

@@ -7,42 +7,27 @@ type RecipeIngredientComponentProps = {
 const RecipeIngredientComponent = ({
   ingredient,
 }: RecipeIngredientComponentProps) => {
-  const isDisplayedInUnit = ingredient.unitName ? true : false;
-
   return (
     <>
-      {ingredient.name + " "}
-      <RecipeIngredientQuantityComponent ingredient={ingredient} />
+      <span className="pr-1">{ingredient.name}:</span>
+      <RecipeIngredientQuantityInGramsComponent ingredient={ingredient} />
+      <RecipeIngredientQuantityInUnitComponent ingredient={ingredient} />
     </>
   );
-};
-
-const RecipeIngredientQuantityComponent = ({
-  ingredient,
-}: RecipeIngredientComponentProps) => {
-  const isDisplayedInUnit = ingredient.unitName ? true : false;
-
-  if (isDisplayedInUnit) {
-    return (
-      <>
-        <RecipeIngredientQuantityInUnitComponent ingredient={ingredient} />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <RecipeIngredientQuantityInGramsComponent ingredient={ingredient} />
-      </>
-    );
-  }
 };
 
 const RecipeIngredientQuantityInUnitComponent = ({
   ingredient,
 }: RecipeIngredientComponentProps) => {
-  const unitName =
-    ingredient.quantity > 1 ? ingredient.unitName + "s" : ingredient.unitName;
-  return <>{ingredient.quantity + " " + unitName}</>;
+  const quantity = ingredient.quantity / ingredient.unitQuantity;
+  const plural = quantity > 1 ? true : false;
+  let unitName = ingredient.unitName ? ingredient.unitName : ingredient.name;
+  if (plural && ingredient.pluralUnitName) {
+    unitName = ingredient.pluralUnitName;
+  } else if (plural) {
+    unitName = unitName + "s";
+  }
+  return <>{" (" + quantity + " " + unitName + ") "}</>;
 };
 
 const RecipeIngredientQuantityInGramsComponent = ({
