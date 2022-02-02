@@ -1,4 +1,4 @@
-import { Recipe } from "../types/recipes";
+import { Recipe, RecipeIngredient } from "../types/recipes";
 import RecipeIngredientComponent from "./recipeIngredient";
 
 type RecipeComponentProps = {
@@ -6,13 +6,19 @@ type RecipeComponentProps = {
 };
 
 const RecipeComponent = ({ recipe }: RecipeComponentProps) => {
+  const numberOfPeople = 1;
+
+  const receiptIngredients = recipe.ingredients.map((i: RecipeIngredient) => {
+    return { ...i, quantity: i.quantity * numberOfPeople };
+  });
+
   return (
     <div className="my-5">
-      <p className="text-2xl">{recipe.name}</p>
-      <p>{recipe.desc}</p>
+      <p className="capitalize text-2xl">{recipe.name}</p>
+      <p className="capitalize">{recipe.desc}</p>
 
       <ul>
-        {recipe.ingredients.map((ingredient, i) => (
+        {receiptIngredients.map((ingredient, i) => (
           <li className="pl-6" key={i}>
             {"- "}
             <RecipeIngredientComponent ingredient={ingredient} />

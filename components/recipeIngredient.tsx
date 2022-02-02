@@ -9,7 +9,7 @@ const RecipeIngredientComponent = ({
 }: RecipeIngredientComponentProps) => {
   return (
     <>
-      <span className="pr-1">{ingredient.name}:</span>
+      <span className="capitalize pr-1">{ingredient.name}:</span>
       <RecipeIngredientQuantityInGramsComponent ingredient={ingredient} />
       <RecipeIngredientQuantityInUnitComponent ingredient={ingredient} />
     </>
