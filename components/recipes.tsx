@@ -3,6 +3,7 @@ import RecipeComponent from "./recipe";
 
 type RecipesComponentProps = {
   recipes: Recipe[];
+  numberOfPeople: number;
 };
 
 const RecipesComponent = ({ recipes }: RecipesComponentProps) => {

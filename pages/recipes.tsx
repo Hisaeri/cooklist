@@ -23,6 +23,7 @@ export const getServerSideProps: GetStaticProps = async (context) => {
 const RecipesPage: NextPage<NextComponentType> = ({
   recipes,
 }: InferGetStaticPropsType<typeof getServerSideProps>) => {
+  const numberOfPeople = 1;
   return (
     <>
       <Head>
@@ -32,8 +33,8 @@ const RecipesPage: NextPage<NextComponentType> = ({
       </Head>
 
       <div className="container mx-auto">
-        <h1 className="text-4xl">Recipes (for one)</h1>
-        <RecipesComponent recipes={recipes} />
+        <h1 className="text-4xl">Recipes (for {numberOfPeople} by default)</h1>
+        <RecipesComponent recipes={recipes} numberOfPeople={numberOfPeople} />
       </div>
     </>
   );
