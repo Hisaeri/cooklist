@@ -25,8 +25,8 @@ class RecipesDb {
         return [
             {
                 id: 1,
-                name: "Chicken curry",
-                desc: "Classic indian style curry",
+                name: "chicken curry",
+                desc: "classic indian style curry",
                 ingredients: [
                     {
                         id: 1,
@@ -42,21 +42,17 @@ class RecipesDb {
                     },
                     {
                         id: 4,
-                        quantity: 50,
+                        quantity: 10,
                     },
                     {
                         id: 5,
                         quantity: 1,
-                    },
-                    {
-                        id: 8,
-                        quantity: 1,
-                    },
+                    }
                 ],
             },
             {
                 id: 2,
-                name: "Salad",
+                name: "salad",
                 ingredients: [
                     {
                         id: 6,

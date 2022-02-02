@@ -5,46 +5,40 @@ class IngredientsDb {
         return [
             {
                 id: 1,
-                "name": "Onion",
+                "name": "onion",
                 "unitQuantity": 100
             },
             {
                 id: 2,
-                "name": "Potato",
+                "name": "potato",
                 "unitQuantity": 150
             },
             {
                 id: 3,
-                "name": "Leek",
+                "name": "leek",
                 "unitQuantity": 100
             },
             {
                 id: 4,
-                "name": "Garlic",
+                "name": "garlic",
                 "unitQuantity": 5,
                 "unitName": "clove"
             },
             {
                 id: 5,
-                "name": "Chili",
+                "name": "chili",
                 "desc": "Can sometimes be very spicy",
                 "unitQuantity": 1
             },
             {
                 id: 6,
-                "name": "Salad",
+                "name": "salad",
                 "unitQuantity": 200,
             },
             {
                 id: 7,
-                "name": "Tomato",
+                "name": "tomato",
                 "unitQuantity": 50
-            },
-            {
-                id: 8,
-                "name": "Love",
-                "unitQuantity": 1,
-                "unitName": "heart",
             }
         ];
     }
