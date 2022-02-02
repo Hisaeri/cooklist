@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container mx-auto">
-        <h1 className="text-3xl font-bold">Welcome to Cooklist!</h1>
+        <h1 className="text-4xl mb-4">Welcome to My Cooklist!</h1>
         <h2>
           Cooklist is an app made with NextJS and React that generates a
           shopping list from selected recipes, for easy grocery shopping.
