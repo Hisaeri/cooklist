@@ -1,31 +1,56 @@
-import { Recipe } from "../../../types/recipes";
+import { Recipe, RecipeDetails } from "../../../types/recipes";
+import ingredientsDb from "../ingredients/db";
 
 class RecipesDb {
     getRecipes(): Recipe[] {
+        return this.getRecipesFromRecipesDetails(this.getRecipesDetails());
+    }
+
+    getRecipe(id: number): Recipe | undefined {
+        return this.getRecipes().find((recipe => { return recipe.id === id }));
+    }
+
+    private getRecipesFromRecipesDetails(recipes: RecipeDetails[]): Recipe[] {
+        return recipes.map(recipe => {
+            return {
+                ...recipe,
+                ingredients: recipe.ingredients.map(ingredient => {
+                    return { ...ingredient, ...ingredientsDb.getIngredient(ingredient.id) };
+                })
+            };
+        })
+    }
+
+    private getRecipesDetails(): RecipeDetails[] {
         return [
             {
                 id: 1,
                 name: "Chicken curry",
+                desc: "Classic indian style curry",
                 ingredients: [
                     {
-                        name: "onion",
-                        quantity: 50,
+                        id: 1,
+                        quantity: 50
                     },
                     {
-                        name: "chicken",
+                        id: 2,
                         quantity: 75,
                     },
                     {
-                        name: "potato",
+                        id: 3,
                         quantity: 150,
                     },
                     {
-                        name: "leek",
+                        id: 4,
                         quantity: 50,
                     },
                     {
-                        name: "garlic",
-                        quantity: 10,
+                        id: 5,
+                        quantity: 1,
+                    },
+                    {
+                        id: 8,
+                        quantity: 1,
                     },
                 ],
             },
@@ -34,20 +59,16 @@ class RecipesDb {
                 name: "Salad",
                 ingredients: [
                     {
-                        name: "salad",
+                        id: 6,
                         quantity: 150,
                     },
                     {
-                        name: "tomato",
+                        id: 7,
                         quantity: 100,
                     }
                 ],
             },
-        ];
-    }
-
-    getRecipe(id: number): Recipe | undefined {
-        return this.getRecipes().find((recipe => { return recipe.id === id }));
+        ]
     }
 };
 

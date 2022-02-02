@@ -5,35 +5,56 @@ class IngredientsDb {
         return [
             {
                 id: 1,
-                "name": "onion",
+                "name": "Onion",
                 "unitQuantity": 100
             },
             {
                 id: 2,
-                "name": "potato",
+                "name": "Potato",
                 "unitQuantity": 150
             },
             {
                 id: 3,
-                "name": "leek",
+                "name": "Leek",
                 "unitQuantity": 100
             },
             {
                 id: 4,
-                "name": "garlic",
-                "unitQuantity": 5
+                "name": "Garlic",
+                "unitQuantity": 5,
+                "unitName": "clove"
             },
             {
                 id: 5,
-                "name": "chili pepper",
-                "desc": "can sometimes be very spicy",
-                "unitQuantity": 5
+                "name": "Chili",
+                "desc": "Can sometimes be very spicy",
+                "unitQuantity": 1
+            },
+            {
+                id: 6,
+                "name": "Salad",
+                "unitQuantity": 200,
+            },
+            {
+                id: 7,
+                "name": "Tomato",
+                "unitQuantity": 50
+            },
+            {
+                id: 8,
+                "name": "Love",
+                "unitQuantity": 1,
+                "unitName": "heart",
             }
         ];
     }
 
-    getIngredient(id: number): Ingredient | undefined {
-        return this.getIngredients().find((ingredient => { return ingredient.id === id }));
+    getIngredient(id: number): Ingredient {
+        const ingredient = this.getIngredients().find((ingredient => { return ingredient.id === id }));
+        if (!ingredient) {
+            throw new Error("IngredientNotFound");
+        }
+        return ingredient;
     }
 };
 

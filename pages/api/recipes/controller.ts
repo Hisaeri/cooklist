@@ -30,7 +30,6 @@ class RecipesController {
         switch (e.message) {
             case "NotFound":
                 return res.status(404).send('RecipeNotFound\n');
-
             default:
                 return res.status(500).json('Internal error\n');
         }
