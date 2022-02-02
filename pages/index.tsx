@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="container mx-auto">
         <h1 className="text-3xl font-bold">Welcome to Cooklist!</h1>
         <h2>
           Cooklist is an app made with NextJS and React that generates a
