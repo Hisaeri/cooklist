@@ -7,7 +7,11 @@ type RecipeIngredientComponentProps = {
 const RecipeIngredientComponent = ({
   ingredient,
 }: RecipeIngredientComponentProps) => {
-  return <>{ingredient.name}</>;
+  return (
+    <>
+      {ingredient.name} ({ingredient.quantity + " grams"}){" "}
+    </>
+  );
 };
 
 export default RecipeIngredientComponent;
