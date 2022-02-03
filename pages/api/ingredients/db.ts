@@ -11,7 +11,8 @@ class IngredientsDb {
             {
                 id: 2,
                 "name": "potato",
-                "unitQuantity": 150
+                "unitQuantity": 150,
+                "pluralUnitName": "potatoes"
             },
             {
                 id: 3,
@@ -38,7 +39,8 @@ class IngredientsDb {
             {
                 id: 7,
                 "name": "tomato",
-                "unitQuantity": 50
+                "unitQuantity": 50,
+                "pluralUnitName": "tomatoes"
             }
         ];
     }
